@@ -97,7 +97,7 @@ def multiplot(dictionary):
     plt.subplots_adjust(wspace = 1)
     plt.suptitle('The Variation in Different Types of Employment Across a few Various Countries')
     plt.show()
-    plt.clf()
+plt.clf()
 #Plotting Employment for various different countries
 multiplot(Employmentdf_Dict)
 #Repeat Process Above for DevType
@@ -113,7 +113,7 @@ def multiplot2(dictionary):
     fig = plt.figure(figsize = (40, 20))
     for i, j in dictionary.items():
         DevType_counts = j[['DevType', 'Country']].groupby('Country').count()
-        ax = plt.subplot(1, len(dictionary), count)
+        plt.subplot(1, len(dictionary), count)
         plt.bar(x = DevType_counts.index, height = DevType_counts.DevType)
         plt.title(f'Dev Type: {i}')
         plt.xlabel('Country')
@@ -124,5 +124,5 @@ def multiplot2(dictionary):
     plt.suptitle('The Variation in Different Types of Developers Across a few Various Countries')
     plt.show()
     plt.clf()
-#Plotting
-multiplot2(DevType_df_Dict)
+#Plotting, Error with plot but not sure why arising
+#multiplot2(DevType_df_Dict)
